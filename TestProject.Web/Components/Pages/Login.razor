@@ -1,0 +1,37 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Login</PageTitle>
+
+<h1>Login</h1>
+
+<span id="error" class="text-danger"></span>
+<span id="success" class="text-success"></span>
+
+<input id="email" type="text" class="form-control" placeholder="Email" />
+<input id="password" type="password" class="form-control" placeholder="Password" />
+<button id="login" class="btn btn-sm btn-primary" type="button" onclick="login()">Login</button>
+
+
+<script>
+  function login() {
+    document.getElementById("error").innerText = "";
+    document.getElementById("success").innerText = "";
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    fetch("/api/v1/users/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, password: password })
+    }
+    ).then(response => {
+      if (response.status != 200) {
+        response.json().then(error => document.getElementById("error").innerText = error);
+      }
+      else
+        document.getElementById("success").innerText = "User has login";
+    });
+  };
+</script>
