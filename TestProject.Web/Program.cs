@@ -43,3 +43,6 @@ app.MapRazorComponents<App>()
 app.AddUserEndpoints();
 
 app.Run();
+
+
+public partial class Program;
