@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TestProject.Web.Application;
 using TestProject.Web.Core;
 
-namespace TestProject.UnitTest;
+namespace TestProject.UnitTest.Services;
 
 public class UserUseCaseTest : TestBase
 {

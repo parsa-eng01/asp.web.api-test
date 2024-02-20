@@ -3,7 +3,7 @@ using FluentAssertions;
 using TestProject.Web;
 using TestProject.Web.Application;
 
-namespace TestProject.UnitTest;
+namespace TestProject.UnitTest.API;
 
 public class UserApiTest : TestBase
 {
